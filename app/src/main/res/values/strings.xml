@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab01</string>
+    <string name="titulo1">Calculadora Plazo Fijo</string>
+    <string name="titulo_email">Correo Electronico</string>
+    <string name="titulo_cuit">CUIT</string>
+    <string name="titulo_importe">Importe</string>
+    <string name="titulo_cantidad">Cantidad de Dias</string>
+    <string name="texto_checkbox">Renovar Automáticamente al Vencimiento</string>
+    <string name="boton">HACER PLAZO FIJO</string>
+    <string name="diasInicial">0</string>
+    <string name="mensajeFinal">Plazo fijo realizado. Recibirá %1$.2f al vecimiento!</string>
+</resources>
