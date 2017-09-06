@@ -18,7 +18,7 @@
         android:text="@string/titulo1" />
 
     <TextView
-        android:id="@+id/textView2"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -26,15 +26,16 @@
         android:text="@string/titulo_email" />
 
     <EditText
-        android:id="@+id/edit1"
+        android:id="@+id/campoEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp" />
+        android:layout_marginStart="16dp"
+        android:inputType="textEmailAddress"/>
 
     <TextView
-        android:id="@+id/textView4"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -42,7 +43,7 @@
         android:text="@string/titulo_cuit" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/campoCuit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -51,7 +52,6 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/titulo_importe"
@@ -104,7 +104,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:visibility="invisible"
-        android:text="TextView"
+        android:text="@string/textoResultado"
         android:textSize="24sp" />
 
     <CheckBox
@@ -117,7 +117,7 @@
         android:layout_marginStart="16dp"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/boton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/boton"

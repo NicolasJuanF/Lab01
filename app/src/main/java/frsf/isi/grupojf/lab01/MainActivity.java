@@ -18,8 +18,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        String mensajeGanancia = getString(R.string.textoResultado, 0.0);
+        TextView mensajeGananciaText = (TextView) findViewById(R.id.resultado);
+        mensajeGananciaText.setText(mensajeGanancia);
+        TextView successText = (TextView) findViewById(R.id.textoMensajeFinal);
+        successText.setVisibility(View.INVISIBLE);
+
         SeekBar seekBarDia = (SeekBar) findViewById(R.id.seekBar);
         seekBarDia.setOnSeekBarChangeListener(this);
+
+        Button botonPlazo = (Button) findViewById(R.id.boton);
+        botonPlazo.setOnClickListener(this);
     }
 
 
@@ -30,9 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         double valor = mostrarGanancias();
         Log.v("valor", "valor: " + valor);
         valor += importe;
-        String mensaje = getString(R.string.labelSuccess, valor);
-        TextView successText = (TextView) findViewById(R.id.successText);
+        String mensaje = getString(R.string.mensajeFinal, valor);
+        TextView successText = (TextView) findViewById(R.id.textoMensajeFinal);
         successText.setText(mensaje);
+        successText.setTextColor(getResources().getColor(R.color.colorSuccess,null));
         successText.setVisibility(View.VISIBLE);
     }
 
@@ -41,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cantDias = i;
         TextView diasText = (TextView) findViewById(R.id.cantidadDias);
         diasText.setText(String.valueOf(cantDias));
-        //mostrarGanancias();
+        mostrarGanancias();
     }
 
     @Override
@@ -57,18 +69,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //CALCULO DE GANANCIA
     private double mostrarGanancias(){
-        EditText importeField = (EditText) findViewById(R.id.campoImporte);
+        EditText campoImporte = (EditText) findViewById(R.id.campoImporte);
         try {
-            importe = Integer.parseInt(importeField.getText().toString());
+            importe = Integer.parseInt(campoImporte.getText().toString());
         }
         catch (NumberFormatException e){
             importe = 0;
         }
         double valor = calcularImporte(importe,cantDias);
-        TextView gananciaText = (TextView) findViewById(R.id.labelGananciaNum);
-        String mensajeGananciaNum = getString(R.string.labelGananciaNum, valor);
-        gananciaText.setText(mensajeGananciaNum);
-        TextView successText = (TextView) findViewById(R.id.successText);
+        TextView gananciaTexto = (TextView) findViewById(R.id.resultado);
+        String mensajeGananciaNum = getString(R.string.textoResultado, valor);
+        gananciaTexto.setText(mensajeGananciaNum);
+        gananciaTexto.setVisibility(View.VISIBLE);
+        TextView successText = (TextView) findViewById(R.id.textoMensajeFinal);
         successText.setVisibility(View.INVISIBLE);
         return valor;
 

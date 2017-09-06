@@ -8,5 +8,6 @@
     <string name="texto_checkbox">Renovar Automáticamente al Vencimiento</string>
     <string name="boton">HACER PLAZO FIJO</string>
     <string name="diasInicial">0</string>
-    <string name="mensajeFinal">Plazo fijo realizado. Recibirá %1$.2f al vecimiento!</string>
+    <string name="textoResultado">$ %1$.2f</string>
+    <string name="mensajeFinal">Plazo fijo realizado. Recibirá $ %1$.2f al vecimiento!</string>
 </resources>
